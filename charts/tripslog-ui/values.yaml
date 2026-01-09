@@ -1,0 +1,41 @@
+# --------------------------------------------------------
+# Chart Config
+# --------------------------------------------------------
+
+nameOverride: ""
+fullnameOverride: ""
+
+# --------------------------------------------------------
+# APP (React UI)
+# --------------------------------------------------------
+
+replicas: 1
+image:
+  repository: "ghcr.io/rezakaramad/tripslog-ui"
+  tag: "13c1f1c03cf581737108638b61b7f95e35470f3a"
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 8080
+
+logging:
+  root: INFO
+
+envConfigMap: false
+
+volumes: []
+volumeMounts: []
+
+resources: {}
+
+nodeSelector: {}
+affinity: {}
+tolerations: []
+
+appConfig: ""

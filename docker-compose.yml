@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: ghcr.io/rezakaramad/tripslog-frontend:be2cd22aab5836b85d4ad7eb6d85e5a01c8b6148
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
+    container_name: tripslog_frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:8080"
